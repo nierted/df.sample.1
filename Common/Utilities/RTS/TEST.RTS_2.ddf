@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<datafluxdocument class="architectjob" version="1.1">
+
+  <propset>
+    <prop name="_DESCRIPTION">
+      <value dtype="String"></value>
+    </prop>
+    <prop name="_NOTES">
+      <value dtype="String"></value>
+    </prop>
+    <prop name="AutoLayoutRequired"/>
+    <prop name="DefaultLayout">
+      <value dtype="String">LeftToRight</value>
+    </prop>
+    <prop name="GroupNodes"/>
+    <prop name="name">
+      <value dtype="String">TEST.RTS_2</value>
+    </prop>
+    <prop name="ShowGridLines">
+      <value dtype="String">True</value>
+    </prop>
+    <prop name="SnapToGrid">
+      <value dtype="String">False</value>
+    </prop>
+    <prop name="STICKYNOTES"/>
+    <prop name="ZoomLevel">
+      <value dtype="String">26</value>
+    </prop>
+  </propset>
+
+  <paramset>
+    <param name="WFINPUTS" type="matrix"/>
+    <param name="WFOUTPUTS" type="matrix"/>
+  </paramset>
+
+  <page>
+    <propset>
+      <prop name="serial_targets"/>
+    </propset>
+    <step id="EXT_PROVIDER" iid="1">
+      <propset>
+        <prop name="color"/>
+        <prop name="default_target"/>
+        <prop name="description">
+          <value dtype="String">INPUT_DATA</value>
+        </prop>
+        <prop name="descriptive_text">
+          <value dtype="String">External Data Provider</value>
+        </prop>
+        <prop name="node_position">
+          <value dtype="String">155</value>
+          <value dtype="String">141.12</value>
+        </prop>
+        <prop name="notes">
+          <value dtype="String"></value>
+        </prop>
+        <prop name="owning_group_id"/>
+        <prop name="serial_target_position"/>
+      </propset>
+      <paramset>
+        <param name="EXPECTED" type="matrix">
+          <row>
+            <col dtype="String" name="NAME">Address_Line_1</col>
+            <col dtype="String" name="TYPE">STRING</col>
+            <col dtype="String" name="LENGTH">255</col>
+          </row>
+          <row>
+            <col dtype="String" name="NAME">City</col>
+            <col dtype="String" name="TYPE">STRING</col>
+            <col dtype="String" name="LENGTH">100</col>
+          </row>
+          <row>
+            <col dtype="String" name="NAME">State</col>
+            <col dtype="String" name="TYPE">STRING</col>
+            <col dtype="String" name="LENGTH">100</col>
+          </row>
+          <row>
+            <col dtype="String" name="NAME">Zip</col>
+            <col dtype="String" name="TYPE">STRING</col>
+            <col dtype="String" name="LENGTH">5</col>
+          </row>
+        </param>
+        <param dtype="Unknown" isnull="true" name="MAX_OUTPUT_ROWS" type="single"></param>
+        <param dtype="Integer" name="STRING_BYTESPERCHAR" type="single">4</param>
+      </paramset>
+    </step>
+    <step id="ADDRESS_VERIFY" iid="3">
+      <propset>
+        <prop name="color"/>
+        <prop name="default_target"/>
+        <prop name="description">
+          <value dtype="String">Address Verification (US/Canada) 1</value>
+        </prop>
+        <prop name="descriptive_text">
+          <value dtype="String">Address Verification (US/Canada)</value>
+        </prop>
+        <prop name="node_position">
+          <value dtype="String">293</value>
+          <value dtype="String">139.12</value>
+        </prop>
+        <prop name="notes">
+          <value dtype="String"></value>
+        </prop>
+        <prop name="owning_group_id"/>
+        <prop name="serial_target_position"/>
+      </propset>
+      <paramset>
+        <param dtype="String" name="ADDRESS_TYPE" type="single">USA</param>
+        <param dtype="Unknown" isnull="true" name="USPS_PATH" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="CANADA_PATH" type="single"></param>
+        <param name="INPUTS" type="matrix">
+          <row>
+            <col dtype="String" name="INPUTNAME">Address_Line_1</col>
+            <col dtype="String" name="FIELD_TYPE">ADDRESS1</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">City</col>
+            <col dtype="String" name="FIELD_TYPE">LASTLINE1</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">State</col>
+            <col dtype="String" name="FIELD_TYPE">LASTLINE2</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Zip</col>
+            <col dtype="String" name="FIELD_TYPE">LASTLINE3</col>
+          </row>
+        </param>
+        <param name="OUTPUTS" type="matrix">
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Addressee</col>
+            <col dtype="String" name="FIELD_TYPE">ADDRESSEE</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Firm</col>
+            <col dtype="String" name="FIELD_TYPE">FIRM</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Address_Line_1</col>
+            <col dtype="String" name="FIELD_TYPE">ADDRESS1</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Address_Line_2</col>
+            <col dtype="String" name="FIELD_TYPE">ADDRESS2</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">City</col>
+            <col dtype="String" name="FIELD_TYPE">CITY</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">State</col>
+            <col dtype="String" name="FIELD_TYPE">STATE</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">ZIP/Postal_Code</col>
+            <col dtype="String" name="FIELD_TYPE">ZIP</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Country</col>
+            <col dtype="String" name="FIELD_TYPE">COUNTRY</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_ZIP</col>
+            <col dtype="String" name="FIELD_TYPE">USZIP</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_ZIP4</col>
+            <col dtype="String" name="FIELD_TYPE">USZIP4</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Number</col>
+            <col dtype="String" name="FIELD_TYPE">USSTNUM</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Pre-direction</col>
+            <col dtype="String" name="FIELD_TYPE">USSTPRE</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Name</col>
+            <col dtype="String" name="FIELD_TYPE">USSTNAME</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Suffix</col>
+            <col dtype="String" name="FIELD_TYPE">USSTSUF</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Post-direction</col>
+            <col dtype="String" name="FIELD_TYPE">USSTPOST</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Secondary_Abbrev</col>
+            <col dtype="String" name="FIELD_TYPE">USSTSECABBR</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Secondary_Number</col>
+            <col dtype="String" name="FIELD_TYPE">USSTSECNUM</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Urbanization_(PR)</col>
+            <col dtype="String" name="FIELD_TYPE">URBANIZATION</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Carrier_Route</col>
+            <col dtype="String" name="FIELD_TYPE">USCRID</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_PMB_Designator</col>
+            <col dtype="String" name="FIELD_TYPE">USPMBDESIG</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_PMB_Number</col>
+            <col dtype="String" name="FIELD_TYPE">USPMBNUM</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Deliv_Pt</col>
+            <col dtype="String" name="FIELD_TYPE">USDELIVPT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Deliv_Pt_Check_Digit</col>
+            <col dtype="String" name="FIELD_TYPE">USDPCD</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_LACS_Indicator</col>
+            <col dtype="String" name="FIELD_TYPE">USLACS</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Default_Highrise_Ind</col>
+            <col dtype="String" name="FIELD_TYPE">USDEFAULT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Early_Warning_System_Ind</col>
+            <col dtype="String" name="FIELD_TYPE">USEWS</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Record_Type</col>
+            <col dtype="String" name="FIELD_TYPE">USRECTYPE</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Congressional_District</col>
+            <col dtype="String" name="FIELD_TYPE">USCONGRDIST</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_County_Code</col>
+            <col dtype="String" name="FIELD_TYPE">USCOUNTY</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_County_Name</col>
+            <col dtype="String" name="FIELD_TYPE">USCNTYNAME</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_State_FIPS</col>
+            <col dtype="String" name="FIELD_TYPE">USSTATECODE</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Extra_Information</col>
+            <col dtype="String" name="FIELD_TYPE">USEXTRAINFO</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Finance_Number</col>
+            <col dtype="String" name="FIELD_TYPE">USFINANCENO</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Preferred_City_Name</col>
+            <col dtype="String" name="FIELD_TYPE">USPREFCITY</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Abbreviated_City_Name</col>
+            <col dtype="String" name="FIELD_TYPE">USABBRCITY</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Verified_Street-Level_Address_Flag</col>
+            <col dtype="String" name="FIELD_TYPE">USVERSTREET</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Result_Code</col>
+            <col dtype="String" name="FIELD_TYPE">USRESULT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Numeric_Result_Code</col>
+            <col dtype="String" name="FIELD_TYPE">USNUMRESULT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_RDI_Result_Code</col>
+            <col dtype="String" name="FIELD_TYPE">USRDIRESULT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_RDI</col>
+            <col dtype="String" name="FIELD_TYPE">USRDI</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_eLOT_Result_Code</col>
+            <col dtype="String" name="FIELD_TYPE">USELOTRESULT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_eLOT_AD_Flag</col>
+            <col dtype="String" name="FIELD_TYPE">USELOTADF</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_eLOT_Sequence_Number</col>
+            <col dtype="String" name="FIELD_TYPE">USELOTSEQN</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Result_Code</col>
+            <col dtype="String" name="FIELD_TYPE">USDPVRESULT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Confirmation_Ind</col>
+            <col dtype="String" name="FIELD_TYPE">USDPVCONF</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_CMRA_Confirmation_Ind</col>
+            <col dtype="String" name="FIELD_TYPE">USCMRACONF</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Footnote_1</col>
+            <col dtype="String" name="FIELD_TYPE">USDPVFN1</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Footnote_2</col>
+            <col dtype="String" name="FIELD_TYPE">USDPVFN2</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Footnote_3</col>
+            <col dtype="String" name="FIELD_TYPE">USDPVFN3</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Other_Footnotes</col>
+            <col dtype="String" name="FIELD_TYPE">USDPVOTHFN</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_False_Positive_Ind</col>
+            <col dtype="String" name="FIELD_TYPE">USDPVFPOS</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_LACSLink_Result_Code</col>
+            <col dtype="String" name="FIELD_TYPE">USLACSRES</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_LACSLink_Indicator</col>
+            <col dtype="String" name="FIELD_TYPE">USLACSLIND</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_LACSLink_Return_Code</col>
+            <col dtype="String" name="FIELD_TYPE">USLACSLRET</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_Data_Date</col>
+            <col dtype="String" name="FIELD_TYPE">USDATADATE</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Data_Date</col>
+            <col dtype="String" name="FIELD_TYPE">USDPVDATDT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_LACSLink_Data_Date</col>
+            <col dtype="String" name="FIELD_TYPE">USLACSDATDT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_eLOT_Data_Date</col>
+            <col dtype="String" name="FIELD_TYPE">USELOTDATDT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_SuiteLink_Conversion_Ind</col>
+            <col dtype="String" name="FIELD_TYPE">USSLKCONV</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_No_Delivery_Ind</col>
+            <col dtype="String" name="FIELD_TYPE">USDPVNOSTAT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Vacancy_Ind</col>
+            <col dtype="String" name="FIELD_TYPE">USDPVVACANT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Result_Code</col>
+            <col dtype="String" name="FIELD_TYPE">CARESULT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Civic_Number</col>
+            <col dtype="String" name="FIELD_TYPE">CACIVICNUM</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Civic_Number_Suffix</col>
+            <col dtype="String" name="FIELD_TYPE">CACIVICNUMSUFF</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Street_Name</col>
+            <col dtype="String" name="FIELD_TYPE">CASTNAME</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Street_Type</col>
+            <col dtype="String" name="FIELD_TYPE">CASTTYPE</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Street_Direction</col>
+            <col dtype="String" name="FIELD_TYPE">CASTDIR</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Unit_Type</col>
+            <col dtype="String" name="FIELD_TYPE">CAUNITTYPE</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Unit_Number</col>
+            <col dtype="String" name="FIELD_TYPE">CAUNITNUM</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Deliv_Mode_Type</col>
+            <col dtype="String" name="FIELD_TYPE">CADMTYPE</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Deliv_Mode_Number</col>
+            <col dtype="String" name="FIELD_TYPE">CADMNUM</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Deliv_Inst_Area</col>
+            <col dtype="String" name="FIELD_TYPE">CADIAREA</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Deliv_Inst_Type</col>
+            <col dtype="String" name="FIELD_TYPE">CADITYPE</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Deliv_Inst_Qualifier</col>
+            <col dtype="String" name="FIELD_TYPE">CADIQUAL</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Non_Address</col>
+            <col dtype="String" name="FIELD_TYPE">CANONADDR</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Large_Volume_Receiver_Flag</col>
+            <col dtype="String" name="FIELD_TYPE">LVR</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Canada_Rural_Address_Flag</col>
+            <col dtype="String" name="FIELD_TYPE">RURALADDR</col>
+          </row>
+        </param>
+        <param name="FIELD_MAP" type="matrix"/>
+        <param dtype="Unknown" isnull="true" name="DATA_CACHE_OVERRIDE" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="DATA_CACHE_PCT" type="single"></param>
+        <param dtype="Boolean" name="NON_CASS" type="single">true</param>
+        <param dtype="Boolean" name="PROPERCASE" type="single">true</param>
+        <param dtype="Boolean" name="CREATE3553" type="single">false</param>
+        <param dtype="Unknown" isnull="true" name="3553_LIST_PROCESSOR" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="3553_LIST_ID" type="single"></param>
+        <param dtype="Integer" name="3553_NUM_LISTS" type="single">0</param>
+        <param dtype="Unknown" isnull="true" name="3553_MAILER_NAME" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="3553_MAILER_ADDRESS1" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="3553_MAILER_ADDRESS2" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="3553_MAILER_LASTLINE" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="3553_FILENAME" type="single"></param>
+        <param dtype="Boolean" name="DASH_IN_ZIP" type="single">true</param>
+        <param dtype="Boolean" name="BLANKTONULL" type="single">true</param>
+        <param dtype="Boolean" name="CREATE_SOA" type="single">false</param>
+        <param dtype="Unknown" isnull="true" name="SOA_CUST_NUM" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="SOA_CUST_NAME" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="SOA_CUST_ADDRESS1" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="SOA_CUST_ADDRESS2" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="SOA_CUST_LASTLINE" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="SOA_FILENAME" type="single"></param>
+        <param dtype="Boolean" name="SERP_CORRECT_RURAL" type="single">false</param>
+        <param dtype="Boolean" name="SERP_CORRECT_LVR" type="single">false</param>
+        <param dtype="Boolean" name="SERP_PASS_VALID" type="single">false</param>
+        <param dtype="Unknown" isnull="true" name="USE_DPV" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="USE_LACS" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="USE_RDI" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="USE_ELOT" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="SKIP_NULL_CSZ_LINE" type="single"></param>
+        <param dtype="Boolean" name="USE_SLK" type="single">false</param>
+        <param dtype="Boolean" name="ABBREV_STREET" type="single">false</param>
+        <param dtype="Boolean" name="ABBREV_CITY" type="single">false</param>
+        <param dtype="Unknown" isnull="true" name="CORR_ACCENTS" type="single"></param>
+        <param dtype="Unknown" isnull="true" name="LOGLEVEL" type="single"></param>
+      </paramset>
+    </step>
+    <step id="GEOCODERT" iid="4">
+      <propset>
+        <prop name="color"/>
+        <prop name="default_target"/>
+        <prop name="description">
+          <value dtype="String">Rooftop Geocoding (Tele Atlas) 1</value>
+        </prop>
+        <prop name="descriptive_text">
+          <value dtype="String">Rooftop Geocoding (Tele Atlas)</value>
+        </prop>
+        <prop name="node_position">
+          <value dtype="String">429</value>
+          <value dtype="String">137.12</value>
+        </prop>
+        <prop name="notes">
+          <value dtype="String"></value>
+        </prop>
+        <prop name="owning_group_id"/>
+        <prop name="serial_target_position"/>
+      </propset>
+      <paramset>
+        <param dtype="Unknown" isnull="true" name="GEO_PATH" type="single"></param>
+        <param name="INPUTS" type="matrix">
+          <row>
+            <col dtype="String" name="INPUTNAME">ZIP/Postal_Code</col>
+            <col dtype="String" name="FIELD_TYPE">ZIP</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Street_Number</col>
+            <col dtype="String" name="FIELD_TYPE">STREETNUM</col>
+          </row>
+        </param>
+        <param name="OUTPUTS" type="matrix">
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Geocode_Result_Code</col>
+            <col dtype="String" name="FIELD_TYPE">GEORESULT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Geocode_Latitude</col>
+            <col dtype="String" name="FIELD_TYPE">GEOLATITUDE</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Geocode_Longitude</col>
+            <col dtype="String" name="FIELD_TYPE">GEOLONGITUDE</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Geocode_Country_Code</col>
+            <col dtype="String" name="FIELD_TYPE">GEOCOUNTRY</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Geocode_FIPS</col>
+            <col dtype="String" name="FIELD_TYPE">GEOFIPS</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Geocode_Census_Tract</col>
+            <col dtype="String" name="FIELD_TYPE">GEOTRACT</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Geocode_Census_Block</col>
+            <col dtype="String" name="FIELD_TYPE">GEOBLOCK</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Geocode_FIPS_MCD_Code</col>
+            <col dtype="String" name="FIELD_TYPE">GEOMCD</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Geocode_MSA_or_CMSA</col>
+            <col dtype="String" name="FIELD_TYPE">GEOMSA</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Geocode_PMSA_(for_CMSA)</col>
+            <col dtype="String" name="FIELD_TYPE">GEOPMSA</col>
+          </row>
+          <row>
+            <col dtype="String" name="OUTPUTNAME">Geocode_CBSA</col>
+            <col dtype="String" name="FIELD_TYPE">GEOCBSA</col>
+          </row>
+        </param>
+        <param name="FIELD_MAP" type="matrix">
+          <row>
+            <col dtype="String" name="INPUTNAME">Addressee</col>
+            <col dtype="String" name="OUTPUTNAME">Addressee</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Firm</col>
+            <col dtype="String" name="OUTPUTNAME">Firm</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Address_Line_1</col>
+            <col dtype="String" name="OUTPUTNAME">Address_Line_1</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Address_Line_2</col>
+            <col dtype="String" name="OUTPUTNAME">Address_Line_2</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">City</col>
+            <col dtype="String" name="OUTPUTNAME">City</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">State</col>
+            <col dtype="String" name="OUTPUTNAME">State</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">ZIP/Postal_Code</col>
+            <col dtype="String" name="OUTPUTNAME">ZIP/Postal_Code</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Country</col>
+            <col dtype="String" name="OUTPUTNAME">Country</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_ZIP</col>
+            <col dtype="String" name="OUTPUTNAME">US_ZIP</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_ZIP4</col>
+            <col dtype="String" name="OUTPUTNAME">US_ZIP4</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Street_Number</col>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Number</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Street_Pre-direction</col>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Pre-direction</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Street_Name</col>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Name</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Street_Suffix</col>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Suffix</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Street_Post-direction</col>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Post-direction</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Street_Secondary_Abbrev</col>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Secondary_Abbrev</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Street_Secondary_Number</col>
+            <col dtype="String" name="OUTPUTNAME">US_Street_Secondary_Number</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Urbanization_(PR)</col>
+            <col dtype="String" name="OUTPUTNAME">US_Urbanization_(PR)</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Carrier_Route</col>
+            <col dtype="String" name="OUTPUTNAME">US_Carrier_Route</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_PMB_Designator</col>
+            <col dtype="String" name="OUTPUTNAME">US_PMB_Designator</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_PMB_Number</col>
+            <col dtype="String" name="OUTPUTNAME">US_PMB_Number</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Deliv_Pt</col>
+            <col dtype="String" name="OUTPUTNAME">US_Deliv_Pt</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Deliv_Pt_Check_Digit</col>
+            <col dtype="String" name="OUTPUTNAME">US_Deliv_Pt_Check_Digit</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_LACS_Indicator</col>
+            <col dtype="String" name="OUTPUTNAME">US_LACS_Indicator</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Default_Highrise_Ind</col>
+            <col dtype="String" name="OUTPUTNAME">US_Default_Highrise_Ind</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Early_Warning_System_Ind</col>
+            <col dtype="String" name="OUTPUTNAME">US_Early_Warning_System_Ind</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Record_Type</col>
+            <col dtype="String" name="OUTPUTNAME">US_Record_Type</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Congressional_District</col>
+            <col dtype="String" name="OUTPUTNAME">US_Congressional_District</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_County_Code</col>
+            <col dtype="String" name="OUTPUTNAME">US_County_Code</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_County_Name</col>
+            <col dtype="String" name="OUTPUTNAME">US_County_Name</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_State_FIPS</col>
+            <col dtype="String" name="OUTPUTNAME">US_State_FIPS</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Extra_Information</col>
+            <col dtype="String" name="OUTPUTNAME">US_Extra_Information</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Finance_Number</col>
+            <col dtype="String" name="OUTPUTNAME">US_Finance_Number</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Preferred_City_Name</col>
+            <col dtype="String" name="OUTPUTNAME">US_Preferred_City_Name</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Abbreviated_City_Name</col>
+            <col dtype="String" name="OUTPUTNAME">US_Abbreviated_City_Name</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Verified_Street-Level_Address_Flag</col>
+            <col dtype="String" name="OUTPUTNAME">US_Verified_Street-Level_Address_Flag</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Result_Code</col>
+            <col dtype="String" name="OUTPUTNAME">US_Result_Code</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Numeric_Result_Code</col>
+            <col dtype="String" name="OUTPUTNAME">US_Numeric_Result_Code</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_RDI_Result_Code</col>
+            <col dtype="String" name="OUTPUTNAME">US_RDI_Result_Code</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_RDI</col>
+            <col dtype="String" name="OUTPUTNAME">US_RDI</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_eLOT_Result_Code</col>
+            <col dtype="String" name="OUTPUTNAME">US_eLOT_Result_Code</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_eLOT_AD_Flag</col>
+            <col dtype="String" name="OUTPUTNAME">US_eLOT_AD_Flag</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_eLOT_Sequence_Number</col>
+            <col dtype="String" name="OUTPUTNAME">US_eLOT_Sequence_Number</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_DPV_Result_Code</col>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Result_Code</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_DPV_Confirmation_Ind</col>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Confirmation_Ind</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_CMRA_Confirmation_Ind</col>
+            <col dtype="String" name="OUTPUTNAME">US_CMRA_Confirmation_Ind</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_DPV_Footnote_1</col>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Footnote_1</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_DPV_Footnote_2</col>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Footnote_2</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_DPV_Footnote_3</col>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Footnote_3</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_DPV_Other_Footnotes</col>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Other_Footnotes</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_DPV_False_Positive_Ind</col>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_False_Positive_Ind</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_LACSLink_Result_Code</col>
+            <col dtype="String" name="OUTPUTNAME">US_LACSLink_Result_Code</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_LACSLink_Indicator</col>
+            <col dtype="String" name="OUTPUTNAME">US_LACSLink_Indicator</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_LACSLink_Return_Code</col>
+            <col dtype="String" name="OUTPUTNAME">US_LACSLink_Return_Code</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_Data_Date</col>
+            <col dtype="String" name="OUTPUTNAME">US_Data_Date</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_DPV_Data_Date</col>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Data_Date</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_LACSLink_Data_Date</col>
+            <col dtype="String" name="OUTPUTNAME">US_LACSLink_Data_Date</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_eLOT_Data_Date</col>
+            <col dtype="String" name="OUTPUTNAME">US_eLOT_Data_Date</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_SuiteLink_Conversion_Ind</col>
+            <col dtype="String" name="OUTPUTNAME">US_SuiteLink_Conversion_Ind</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_DPV_No_Delivery_Ind</col>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_No_Delivery_Ind</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">US_DPV_Vacancy_Ind</col>
+            <col dtype="String" name="OUTPUTNAME">US_DPV_Vacancy_Ind</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Result_Code</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Result_Code</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Civic_Number</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Civic_Number</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Civic_Number_Suffix</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Civic_Number_Suffix</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Street_Name</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Street_Name</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Street_Type</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Street_Type</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Street_Direction</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Street_Direction</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Unit_Type</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Unit_Type</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Unit_Number</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Unit_Number</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Deliv_Mode_Type</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Deliv_Mode_Type</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Deliv_Mode_Number</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Deliv_Mode_Number</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Deliv_Inst_Area</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Deliv_Inst_Area</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Deliv_Inst_Type</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Deliv_Inst_Type</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Deliv_Inst_Qualifier</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Deliv_Inst_Qualifier</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Non_Address</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Non_Address</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Large_Volume_Receiver_Flag</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Large_Volume_Receiver_Flag</col>
+          </row>
+          <row>
+            <col dtype="String" name="INPUTNAME">Canada_Rural_Address_Flag</col>
+            <col dtype="String" name="OUTPUTNAME">Canada_Rural_Address_Flag</col>
+          </row>
+        </param>
+        <param dtype="String" name="LOAD_FLAG" type="single">US</param>
+      </paramset>
+    </step>
+    <step id="EXPRESSION" iid="6">
+      <propset>
+        <prop name="color"/>
+        <prop name="default_target"/>
+        <prop name="description">
+          <value dtype="String">Expression 1</value>
+        </prop>
+        <prop name="descriptive_text">
+          <value dtype="String">Expression</value>
+        </prop>
+        <prop name="node_position">
+          <value dtype="String">575</value>
+          <value dtype="String">142.12</value>
+        </prop>
+        <prop name="notes">
+          <value dtype="String"></value>
+        </prop>
+        <prop name="serial_target_position"/>
+      </propset>
+      <paramset>
+        <param dtype="String" name="INIT_EXPRESSION" type="single">string NEKES_ID</param>
+        <param dtype="String" name="EXEC_EXPRESSION" type="single">NEKES_ID = "DEF"</param>
+        <param dtype="String" name="TERM_EXPRESSION" type="single"></param>
+        <param dtype="Boolean" name="GENERATE_ROWS" type="single">false</param>
+        <param dtype="String" name="RETVAL_FIELDNAME" type="single"></param>
+        <param dtype="String" name="PUSHROW_FIELDNAME" type="single"></param>
+        <param name="GROUP_FIELDS" type="matrix"/>
+        <param dtype="String" name="GROUP_INIT_EXPRESSION" type="single"></param>
+        <param dtype="String" name="GROUP_TERM_EXPRESSION" type="single"></param>
+      </paramset>
+    </step>
+    <linkage>
+      <link child="1" cslot="0" parent="0" pslot="0"/>
+      <link child="2" cslot="0" parent="1" pslot="0"/>
+      <link child="3" cslot="0" parent="2" pslot="0"/>
+    </linkage>
+  </page>
+
+</datafluxdocument>
